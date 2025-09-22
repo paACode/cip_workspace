@@ -24,6 +24,8 @@ print("Stocktitle:     ", stock_title_text)
 current_price = soup.find("span", class_="yf-ipw1h0", attrs={"data-testid":"qsp-price"}).string
 print("Current price:  ", current_price)
 
+
+
 # Extract information with xpath:
 from lxml import etree
 dom = etree.HTML(str(soup))
