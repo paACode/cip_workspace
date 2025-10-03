@@ -29,3 +29,11 @@ haruun_lst = haruun_dd["results"]
 haruun_df =pd.DataFrame(haruun_lst)
 print(haruun_df)
 print(haruun_df.loc[:, "population"])
+
+# Even easier
+
+# Make GET request and convert results to DataFrame in one step
+haruun_df = pd.json_normalize(re.get(url, params={"search": "Haruun Kal"}).json()["results"])
+
+print(haruun_df)                # Full planet info
+print(haruun_df["population"])  # Just the population column
